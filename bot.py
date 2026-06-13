@@ -11,8 +11,8 @@ from datetime import date, datetime
 def send_email(subject, body, html=False):
     sender = os.environ["GMAIL_ADDRESS"]
     password = os.environ["GMAIL_APP_PASSWORD"]
-   receivers = [
-        os.environ["GMAIL_ADDRESS"],  #njan
+    receivers = [
+        os.environ["GMAIL_ADDRESS"],
         "juaeljw@gmail.com",
         "ganeshgopal3106@gmail.com",
     ]
