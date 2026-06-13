@@ -11,11 +11,14 @@ from datetime import date, datetime
 def send_email(subject, body, html=False):
     sender = os.environ["GMAIL_ADDRESS"]
     password = os.environ["GMAIL_APP_PASSWORD"]
-    receiver = os.environ["GMAIL_ADDRESS"]
-
+   receivers = [
+        os.environ["GMAIL_ADDRESS"],  #njan
+        "juaeljw@gmail.com",
+        "ganeshgopal3106@gmail.com",
+    ]
     msg = MIMEMultipart("alternative")
     msg["From"] = sender
-    msg["To"] = receiver
+    msg["To"] = ", ".join(receivers)
     msg["Subject"] = subject
 
     mime_type = "html" if html else "plain"
@@ -23,7 +26,7 @@ def send_email(subject, body, html=False):
 
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
         server.login(sender, password)
-        server.sendmail(sender, receiver, msg.as_string())
+        server.sendmail(sender, receivers, msg.as_string())
     print(f"Email sent: {subject}")
 
 
