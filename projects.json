@@ -1,5 +1,13 @@
 [
   {
+    "name": "tide_mobile",
+    "description": "",
+    "url": "https://github.com/gavinsatheesh/tide_mobile",
+    "language": "Dart",
+    "stars": 0,
+    "updated": "2026-06-19"
+  },
+  {
     "name": "pulse-daily-bot",
     "description": "",
     "url": "https://github.com/gavinsatheesh/pulse-daily-bot",
